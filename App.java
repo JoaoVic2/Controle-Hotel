@@ -9,8 +9,6 @@
 // Arthur Samuel S Alves - RA: 323125493
 // Gabriel Vitor Souza da Silva - RA: 323111123
 
-
-
 import javax.swing.JOptionPane;
 
 public class App {
@@ -20,7 +18,7 @@ public class App {
         int opcao = 0;
 
         principalMenu: while (opcao != 5) {
-            String menu = "–––––– Sistema de Gestão Hotel São Meubinlau ––––––\n"
+            String menu = "–––––– Sistema de Gestão Hotel ––––––\n"
                     + "1. Hospedes\n"
                     + "2. Quartos\n"
                     + "3. Check-in\n"
@@ -41,7 +39,7 @@ public class App {
                                 + "5. Voltar\n";
                         opcaoHospedes = Integer.parseInt(JOptionPane.showInputDialog(null, menuHospede));
 
-                    switch (opcaoHospedes) {
+                        switch (opcaoHospedes) {
                             case 1:
                                 String nomeHospede = JOptionPane.showInputDialog(null, "Nome do Hóspede:");
                                 String cpfHospede = JOptionPane.showInputDialog(null, "CPF do Hóspede:");
@@ -88,12 +86,14 @@ public class App {
                             case 1:
                                 String tipoQuarto = JOptionPane.showInputDialog(null, "Tipo do Quarto:");
                                 String tamanhoQuarto = JOptionPane.showInputDialog(null, "Tamanho do Quarto:");
-                                double valorQuarto = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor da Hospedagem:"));
+                                double valorQuarto = Double
+                                        .parseDouble(JOptionPane.showInputDialog(null, "Valor da Hospedagem:"));
                                 hotel.cadastrarQuartos(tipoQuarto, tamanhoQuarto, valorQuarto, opcao);
                                 break;
 
                             case 2:
-                                int numeroQuarto = Integer.parseInt(JOptionPane.showInputDialog(null, "Número do Quarto:"));
+                                int numeroQuarto = Integer
+                                        .parseInt(JOptionPane.showInputDialog(null, "Número do Quarto:"));
                                 double novoValorDiaria = Double
                                         .parseDouble(JOptionPane.showInputDialog(null, "Novo valor da Diária:"));
                                 hotel.editarQuarto(numeroQuarto, novoValorDiaria);
@@ -118,8 +118,9 @@ public class App {
                 case 3:
                     String cpfCheckin = JOptionPane.showInputDialog(null, "CPF do Hóspede:");
                     int numeroCheckin = Integer.parseInt(JOptionPane.showInputDialog(null, "Número do Quarto:"));
-                    int dias = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe o numero de Dias de hospedagem:"));
-                    
+                    int dias = Integer
+                            .parseInt(JOptionPane.showInputDialog(null, "Informe o numero de Dias de hospedagem:"));
+
                     hotel.realizarCheckin(cpfCheckin, numeroCheckin, dias);
                     break;
 
